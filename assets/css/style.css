@@ -2,3 +2,23 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(225, 127, 240);
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}

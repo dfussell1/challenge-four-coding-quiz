@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
+    <title>JS Code Quiz</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    
+    <header>
+        <div id="scores"> <button id="scores-btn">Highscores</button></div>
+        <div id="timer">Time: <span id="time">60</span></div>
+    </header>
+    <div id="quiz-cont">
+        <div id="questions"></div>
+        <button id="start-btn">Start Quiz</button>
+        <div id="answer-btns" class="hide"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
