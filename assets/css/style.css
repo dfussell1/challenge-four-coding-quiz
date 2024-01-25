@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -12,11 +13,40 @@ header {
     justify-content: space-between;
     padding-left: 25px;
     padding-right: 25px;
+    border: solid black;
 }
 
-body {
+#timer {
+    color: white;
+    font-size: 25px;
+}
+
+#scores-btn {
+    background-color: white;
+    font-size: large;
+    color: rgb(225, 127, 240);
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid thick black;
+}
+
+main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+
+#start-btn {
+    background-color: rgb(225, 127, 240);
+    font-size: large;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: solid thick black;
 }
 
 .hide {
