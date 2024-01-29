@@ -1,8 +1,10 @@
 const startBtn = document.getElementById('start-btn');
 const scoresBtn = document.getElementById('scores-btn');
 const answerBtns = document.getElementById('answer-btns');
+const saveBtn = document.getElementById('save-btn');
 const questionsEl = document.getElementById('questions');
 const timerEl = document.getElementById('time');
+const gameOver = document.getElementById('game-over');
 
 const questionsArr = [
     {
@@ -63,6 +65,7 @@ startBtn.addEventListener('click', startGame);
 
 function startGame() {
     startBtn.classList.add('hide');
+    clearInterval(timerInterval);
     currentQuestionIndex = 0;
 
 answerBtns.classList.remove('hide');
@@ -72,7 +75,10 @@ answerBtns.classList.remove('hide');
 }
 
 function startTimer() {
-    const timerInterval = setInterval(function() {
+    if(timerInterval)
+clearInterval(timerInterval);
+
+    timerInterval = setInterval(function() {
         timer--;
         timerEl.textContent = timer
 
@@ -105,15 +111,50 @@ function chooseAnswer(e) {
     }
     answerBtns.innerHTML = '';
     currentQuestionIndex++;
+    
     if (currentQuestionIndex < questionsArr.length) {
         NextQuestion();
     } else {
+        clearInterval(timerInterval);
         endGame();
     }
 }
 
 function endGame() {
     clearInterval(timerInterval);
-        answerBtns.classList.add('hide');
+    answerBtns.classList.add('hide');
     questionsEl.classList.add('hide');
+    gameOver.classList.remove('hide');
 }
+
+function saveScore() {
+    const initials = document.getElementById('initials').value;
+    const score = { initials: initials, score: timer }; 
+
+    const scores = JSON.parse(localStorage.getItem('scores')) || [];
+    scores.push(score);
+
+    localStorage.setItem('scores', JSON.stringify(scores));
+    displayScores();
+}
+
+function displayScores() {
+    const scoresList = document.getElementById('scores-list');
+    scoresList.innerHTML = '';
+
+    const scores = JSON.parse(localStorage.getItem('scores')) || [];
+    scores.sort((a, b) => b.score - a.score); 
+
+    scores.forEach(score => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${score.initials}: ${score.score}`;
+        scoresList.appendChild(listItem);
+
+        document.getElementById('start-btn').classList.add('hide');
+        document.getElementById('game-over').classList.add('hide');
+        document.getElementById('leaderboard').classList.remove('hide');
+    });
+}
+
+saveBtn.addEventListener('click', saveScore);
+scoresBtn.addEventListener('click', displayScores);

@@ -14,8 +14,17 @@
     <main>
         <div id="quiz-cont">
             <div id="questions"></div>
+            
             <button id="start-btn">Start Quiz</button>
             <div id="answer-btns" class="hide"></div>
+        </div>
+        <div id="game-over" class="hide">
+            Game Over! Enter your initials here: <input type="text" name="initials" id="initials">
+            <button id="save-btn">Save Score</button>
+        </div>
+        <div id="leaderboard" class="hide">
+            <h2>Leaderboard</h2>
+            <ul id="scores-list"></ul>
         </div>
     </main>
     <script src="script.js"></script>
