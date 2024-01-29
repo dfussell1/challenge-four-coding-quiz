@@ -13,6 +13,7 @@
         <div id="timer">Time: <span id="time">60</span></div>
     </header>
     <main>
+        <!-- section for quiz -->
         <div id="quiz-cont">
             <div id="questions"></div>
             <div id="start-text">
@@ -21,15 +22,18 @@
             <button id="start-btn">Start Quiz</button>
             <div id="answer-btns" class="hide"></div>
         </div>
+        <!-- section to display game over -->
         <div id="game-over" class="hide">
             <p> Game Over!</p>
             <p>Your score is: <span id="final-score"></span></p>
             <p>Enter your initials here: <input type="text" name="initials" id="initials"></p>
             <button id="save-btn">Save Score</button>
         </div>
+        <!-- section to display leaderboard -->
         <div id="leaderboard" class="hide">
             <h2>Leaderboard</h2>
             <ol id="scores-list"></ol>
+            <button id="clear-btn">Clear Leaderboard</button>
         </div>
     </main>
     <script src="script.js"></script>

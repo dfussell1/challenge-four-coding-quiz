@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* main page styling */
+
 header {
     display: flex;
     flex-direction: row;
@@ -71,6 +73,8 @@ main {
     border: solid thick black;
 }
 
+/* styles for questions and answer buttons */
+
 #questions {
     font-size: xx-large;
     font-family: sans-serif;
@@ -95,6 +99,8 @@ button {
     padding: 5%;
 }
 
+/* styles for the game over display */
+
 #game-over {
     font-size: xx-large;
     font-family: sans-serif;
@@ -113,6 +119,8 @@ button {
     border-radius: 10px;
     text-align: center;
 }
+
+/* styles for the leaderboard and list within */
 
 #leaderboard {
     width: 250px;
@@ -136,6 +144,8 @@ li {
     padding-top: 5px;
     text-align: center;
 }
+
+/* basic "hiding" style to show and hide elements as needed */
 
 .hide {
     display: none;
