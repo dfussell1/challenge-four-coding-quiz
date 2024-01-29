@@ -128,6 +128,8 @@ function endGame() {
     clearInterval(timerInterval);
     answerBtns.classList.add('hide');
     questionsEl.classList.add('hide');
+    const finalScore = document.getElementById('final-score');
+    finalScore.textContent = timer;
     gameOver.classList.remove('hide');
 }
 

@@ -95,6 +95,25 @@ button {
     padding: 5%;
 }
 
+#game-over {
+    font-size: xx-large;
+    font-family: sans-serif;
+}
+
+#save-btn {
+    margin-left: 25%;
+    margin-top: 7.5%;
+    border: solid thick black;
+}
+
+#initials {
+    height: 35px;
+    width: 75px;
+    border: solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
 #leaderboard {
     width: 250px;
 }
