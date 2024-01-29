@@ -16,6 +16,10 @@ header {
     border: solid black;
 }
 
+#title {
+    color: white;
+}
+
 #timer {
     color: white;
     font-size: 25px;
@@ -39,6 +43,24 @@ main {
     height: 75vh;
 }
 
+#quiz-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#start-text {
+    text-align: center;
+    width: 65%; 
+    padding: 5%;
+}
+
+#start-text p {
+    font-size: x-large;
+    font-family: sans-serif;
+}
+
 #start-btn {
     background-color: rgb(225, 127, 240);
     font-size: large;
@@ -52,6 +74,8 @@ main {
 #questions {
     font-size: xx-large;
     font-family: sans-serif;
+    width: 750px;
+    padding-left: 5%;
 }
 
 button {
@@ -67,7 +91,31 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 750px;
     padding: 5%;
+}
+
+#leaderboard {
+    width: 250px;
+}
+
+#leaderboard h2 {
+    font-size: xx-large;
+    color:  rgb(225, 127, 240);
+    padding: 5%;
+}
+
+li {
+    font-size: x-large;
+    font-family: sans-serif;
+    height: 50px;
+    width: 150px;
+    color:  rgb(225, 127, 240);
+    border-radius: 10px;
+    border: solid thick black;
+    margin: 5px;
+    padding-top: 5px;
+    text-align: center;
 }
 
 .hide {

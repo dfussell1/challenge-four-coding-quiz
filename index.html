@@ -9,12 +9,15 @@
 <body>
     <header>
         <div id="scores"> <button id="scores-btn">Highscores</button></div>
+        <div id="title"><h1>JavaScript Code Quiz</h1></div>
         <div id="timer">Time: <span id="time">60</span></div>
     </header>
     <main>
         <div id="quiz-cont">
             <div id="questions"></div>
-            
+            <div id="start-text">
+                <p>Welcome to a JavaScript Code Quiz! Answer a short list of questions about JavaScript within the time limit, but be careful, you will be penalized for any incorrect answers! Good luck and have fun!</p>
+            </div>
             <button id="start-btn">Start Quiz</button>
             <div id="answer-btns" class="hide"></div>
         </div>
@@ -24,7 +27,7 @@
         </div>
         <div id="leaderboard" class="hide">
             <h2>Leaderboard</h2>
-            <ul id="scores-list"></ul>
+            <ol id="scores-list"></ol>
         </div>
     </main>
     <script src="script.js"></script>

@@ -2,6 +2,7 @@ const startBtn = document.getElementById('start-btn');
 const scoresBtn = document.getElementById('scores-btn');
 const answerBtns = document.getElementById('answer-btns');
 const saveBtn = document.getElementById('save-btn');
+const startingText = document.getElementById('start-text');
 const questionsEl = document.getElementById('questions');
 const timerEl = document.getElementById('time');
 const gameOver = document.getElementById('game-over');
@@ -48,14 +49,14 @@ const questionsArr = [
         correct: "all of the above"
     },
     {
-        question: "What is the proper way to grab an HTML element by its ID?",
+        question: "How do you start a FOR loop?",
         answers: [
-            "document.getElementById()",
-            "document.getElementByClass()",
-            "document.getElementByTag()",
-            "None of the above",
+            "for(i<=5, i++)",
+            "for(i=0, i<=5, i++)",
+            "for(i=0, i<=5)",
+            "None of these",
         ],
-        correct: "document.getElementById()"
+        correct: "for(i=0, i<=5, i++)"
     },
 ];
 
@@ -64,7 +65,10 @@ let currentQuestionIndex, timer, timerInterval;
 startBtn.addEventListener('click', startGame);
 
 function startGame() {
+    startingText.classList.add('hide');
     startBtn.classList.add('hide');
+
+    questionsArr.sort(() => Math.random() - 0.5);
     clearInterval(timerInterval);
     currentQuestionIndex = 0;
 
@@ -150,6 +154,7 @@ function displayScores() {
         listItem.textContent = `${score.initials}: ${score.score}`;
         scoresList.appendChild(listItem);
 
+        document.getElementById('start-text').classList.add('hide');
         document.getElementById('start-btn').classList.add('hide');
         document.getElementById('game-over').classList.add('hide');
         document.getElementById('leaderboard').classList.remove('hide');
